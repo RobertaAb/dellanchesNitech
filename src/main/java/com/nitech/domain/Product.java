@@ -1,27 +1,34 @@
 package com.nitech.domain;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
 @Entity
-@Table(name="PRODUCT")
+@Table(name = "product")
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    int productCode;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO) // gera código automaticamente
+	private Integer productId;
 
-    @Column(nullable=false)
-    int price;
+	@Column(nullable = false)
+	private double price;
 
-    @Column(nullable=false)
-    String name;
+	@Column(nullable = false)
+	private String name;
 
-    String description;
+	@Column(nullable = true)
+	private String description;
 
+	@ManyToMany(mappedBy = "products")
+	private List<Order> orders = new ArrayList<Order>();
 
 }

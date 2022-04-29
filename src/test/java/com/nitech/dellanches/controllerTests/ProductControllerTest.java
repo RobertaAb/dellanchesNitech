@@ -1,12 +1,12 @@
 package com.nitech.dellanches.controllerTests;
 
 
-import com.nitech.dellanche.controller.ProductController;
+import com.nitech.controller.ProductController;
 
-import com.nitech.dellanche.domain.Product;
-import com.nitech.dellanche.dto.ProductInsertDto;
-import com.nitech.dellanche.dto.ProductListDto;
-import com.nitech.dellanche.service.ProductService;
+import com.nitech.domain.Product;
+import com.nitech.dto.ProductInsertDto;
+import com.nitech.dto.ProductListDto;
+import com.nitech.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

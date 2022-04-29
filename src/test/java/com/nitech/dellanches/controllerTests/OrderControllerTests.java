@@ -1,10 +1,12 @@
 package com.nitech.dellanches.controllerTests;
 
 
-import com.nitech.dellanche.controller.OrderController;
-import com.nitech.dellanche.domain.Order;
-import com.nitech.dellanche.dto.OrderInsertDto;
-import com.nitech.dellanche.service.OrderService;
+import com.nitech.controller.OrderController;
+
+import com.nitech.domain.Order;
+import com.nitech.dto.OrderInsertDto;
+import com.nitech.service.OrderService;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
