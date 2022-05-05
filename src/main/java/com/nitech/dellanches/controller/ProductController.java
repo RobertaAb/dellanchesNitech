@@ -21,13 +21,12 @@ public class ProductController {
 	@PostMapping
 	public ResponseEntity<?> save(@RequestBody ProductEntity product) {
 		return ResponseEntity.ok(service.save(product));
-	
+
 	}
-	
+
 	@GetMapping
-	public ResponseEntity<?> find(@RequestParam Integer Id){
-		return ResponseEntity.of(service.findById(Id));
+	public ProductEntity find(@RequestParam Integer Id) {
+		return service.findById(Id);
 	}
-		
 
 }
