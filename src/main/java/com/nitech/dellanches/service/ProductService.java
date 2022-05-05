@@ -1,5 +1,7 @@
 package com.nitech.dellanches.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +12,13 @@ import com.nitech.dellanches.repository.ProductRepository;
 public class ProductService {
 	@Autowired
 	ProductRepository repository;
-	
-public ProductEntity save(ProductEntity product) {
-	return repository.save(product);
+
+	public ProductEntity save(ProductEntity product) {
+		return repository.save(product);
+	}
+
+	public Optional<ProductEntity> findById(Integer id) {
+		return repository.findById(id);
 	}
 
 }
