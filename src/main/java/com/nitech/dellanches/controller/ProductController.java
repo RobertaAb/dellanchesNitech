@@ -1,5 +1,7 @@
 package com.nitech.dellanches.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,11 @@ public class ProductController {
 	@GetMapping
 	public ProductEntity find(@RequestParam Integer id) {
 		return service.findById(id);
+	}
+	
+	@GetMapping("/findAll")
+	public List<ProductEntity> findAll(){
+		return service.findAll();
 	}
 
 }

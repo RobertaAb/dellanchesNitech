@@ -1,5 +1,7 @@
 package com.nitech.dellanches.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +21,7 @@ public class ProductService {
 		return repository.findProductEntityById(id);
 	}
 
+	public List<ProductEntity> findAll() {
+		return repository.findAll();
+	}
 }

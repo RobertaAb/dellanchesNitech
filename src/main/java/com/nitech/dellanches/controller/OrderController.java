@@ -2,6 +2,9 @@ package com.nitech.dellanches.controller;
 
 import com.nitech.dellanches.entity.OrderEntity;
 import com.nitech.dellanches.service.OrderService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,5 +23,10 @@ public class OrderController {
     public ResponseEntity < ? > buscar(@RequestParam Integer id){
         return ResponseEntity.ok(orderservice.findById(id));
 
+    }
+    
+    @GetMapping("/findAll")
+    public ResponseEntity <List<?>> findAll(){
+    	return ResponseEntity.ok(orderservice.findAll());
     }
 }
