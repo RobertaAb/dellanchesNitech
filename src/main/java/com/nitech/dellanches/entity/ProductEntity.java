@@ -1,13 +1,11 @@
 package com.nitech.dellanches.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -25,5 +23,6 @@ public class ProductEntity {
 
 	@Column
 	String description;
-
+	@ManyToMany(mappedBy = "products")
+	private List<OrderEntity> orders = new ArrayList<OrderEntity>();
 }

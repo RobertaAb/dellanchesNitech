@@ -25,8 +25,8 @@ public class ProductController {
 	}
 
 	@GetMapping
-	public ProductEntity find(@RequestParam Integer Id) {
-		return service.findById(Id);
+	public ProductEntity find(@RequestParam Integer id) {
+		return service.findById(id);
 	}
 
 }
