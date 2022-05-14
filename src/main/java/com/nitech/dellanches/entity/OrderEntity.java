@@ -2,6 +2,8 @@ package com.nitech.dellanches.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.Generated;
+
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -14,6 +16,7 @@ import java.util.List;
 @Table
 @Data
 @Entity
+@Generated
 public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

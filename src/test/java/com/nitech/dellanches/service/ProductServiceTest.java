@@ -1,6 +1,5 @@
-package com.nitech.dellanches.controller;
+package com.nitech.dellanches.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -11,36 +10,35 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.nitech.dellanches.entity.ProductEntity;
-import com.nitech.dellanches.service.ProductService;
+import com.nitech.dellanches.repository.ProductRepository;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(ProductController.class)
-class ProductControllerTest {
+@WebMvcTest(ProductService.class)
 
+class ProductServiceTest {
 	@Autowired
-	ProductController controller;
-	@MockBean
 	ProductService service;
+	@MockBean
+	ProductRepository repository;
 	@MockBean
 	ProductEntity product;
 
 	@Test
 	void testSave() {
-		assertEquals(controller.save(any()).getStatusCodeValue(), HttpStatus.OK.value());
+		when(service.save(any())).thenReturn(product);
 	}
 
 	@Test
-	void testFind() {
-		when(controller.find(any())).thenReturn(product);
+	void testFindById() {
+		when(service.findById(any())).thenReturn(product);
 	}
 
 	@Test
 	void testFindAll() {
-		when(controller.findAll()).thenReturn(List.of(product));
+		when(service.findAll()).thenReturn(List.of(product));
 	}
 
 }

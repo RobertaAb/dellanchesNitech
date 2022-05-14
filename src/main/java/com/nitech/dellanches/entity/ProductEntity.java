@@ -3,6 +3,7 @@ package com.nitech.dellanches.entity;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.Generated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Table
 @Data
+@Generated
 public class ProductEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
