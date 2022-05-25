@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.List;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -29,4 +32,9 @@ public class OrderServiceTest {
         when(orderService.save(any())).thenReturn(orderEntity);
     }
 
+    @Test
+    void testFindAll(){when(orderService.findAll()).thenReturn(List.of(orderEntity));
+
+    }
 }
+
