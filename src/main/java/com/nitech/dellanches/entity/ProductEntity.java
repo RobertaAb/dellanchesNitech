@@ -1,12 +1,14 @@
 package com.nitech.dellanches.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.Generated;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table
@@ -14,7 +16,7 @@ import java.util.List;
 @Generated
 public class ProductEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 
 	@Column
@@ -25,6 +27,5 @@ public class ProductEntity {
 
 	@Column
 	String description;
-	@ManyToMany(mappedBy = "products")
-	private List<OrderEntity> orders = new ArrayList<OrderEntity>();
+
 }
