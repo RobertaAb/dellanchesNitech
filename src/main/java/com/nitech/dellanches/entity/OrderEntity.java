@@ -38,6 +38,6 @@ public class OrderEntity {
 
 //  @JsonIgnore
 	@ManyToMany
-	@JoinColumn(name = "products", referencedColumnName = "id")
+	@JoinColumn(name = "product", referencedColumnName = "id")
 	private List<ProductEntity> products;
 }
