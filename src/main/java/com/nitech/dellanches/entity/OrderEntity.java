@@ -1,5 +1,6 @@
 package com.nitech.dellanches.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -28,10 +29,8 @@ public class OrderEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
-	private Date dtOrder;
+	private LocalDate dtOrder;
 
 	@Column
 	private double total;

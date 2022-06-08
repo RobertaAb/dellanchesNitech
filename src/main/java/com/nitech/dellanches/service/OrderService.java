@@ -27,11 +27,12 @@ public class OrderService {
 		return orderRepository.save(order);
 	}
 
-	public Object findById(Integer id) {
-		return orderRepository.findById(id);
+	public OrderEntity findById(Integer id) {
+		return orderRepository.findOrderEntityById(id);
 	}
 
 	public List<OrderEntity> findAll() {
 		return orderRepository.findAll();
 	}
+
 }
