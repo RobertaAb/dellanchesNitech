@@ -8,4 +8,5 @@ import com.nitech.dellanches.entity.ProductEntity;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
 	ProductEntity findProductEntityById(Integer Id);
+
 }

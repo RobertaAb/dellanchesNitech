@@ -1,7 +1,8 @@
 package com.nitech.dellanches.controller;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,32 +15,29 @@ import com.nitech.dellanches.entity.OrderEntity;
 import com.nitech.dellanches.service.OrderService;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(OrderController.class) //Classe que sera testada
-
+@WebMvcTest(OrderController.class)
 class OrderControllerTest {
-	
+
 	@Autowired
-	OrderController ordercontroller; // Solicitando autorizacao para uso
-	
+	OrderController controller;
 	@MockBean
-    OrderService orderservice; // Simula o OrderService, ou seja, o OrderService
-	
+	OrderService service;
 	@MockBean
-	OrderEntity orderentity; 
-	
+	OrderEntity order;
+
 	@Test
 	void testSave() {
-		assertEquals(ordercontroller.save(any()).getStatusCodeValue(), HttpStatus.OK.value());
+		assertEquals(controller.save(any()).getStatusCodeValue(), HttpStatus.OK.value());
 	}
 
 	@Test
 	void testFind() {
-		assertEquals(ordercontroller.find(any()).getStatusCodeValue(), HttpStatus.OK.value());
+		assertEquals(controller.buscar(any()).getStatusCodeValue(), HttpStatus.OK.value());
 	}
 
 	@Test
 	void testFindAll() {
-		assertEquals(ordercontroller.findAll().getStatusCodeValue(), HttpStatus.OK.value());
+		assertEquals(controller.findAll().getStatusCodeValue(), HttpStatus.OK.value());
 	}
 
 }
