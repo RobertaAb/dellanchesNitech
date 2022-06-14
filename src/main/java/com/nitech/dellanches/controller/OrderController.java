@@ -20,7 +20,7 @@ public class OrderController {
         return ResponseEntity.ok(orderservice.save(orderEntity));
     }
     @GetMapping
-    public ResponseEntity < ? > buscar(@RequestParam Integer id){
+    public ResponseEntity < ? > find(@RequestParam Integer id){
         return ResponseEntity.ok(orderservice.findById(id));
 
     }

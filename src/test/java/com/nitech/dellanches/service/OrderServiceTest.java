@@ -2,7 +2,6 @@ package com.nitech.dellanches.service;
 
 import com.nitech.dellanches.entity.OrderEntity;
 import com.nitech.dellanches.repository.OrderRepository;
-import com.nitech.dellanches.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,26 +11,30 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(OrderService.class)
 public class OrderServiceTest {
-    @MockBean
-    OrderEntity orderEntity;
+
+    @Autowired
+    OrderService orderService;
 
     @MockBean
     OrderRepository orderRepository;
 
     @MockBean
-    ProductRepository productRepository;
-
-    @Autowired
-    OrderService orderService;
+    OrderEntity orderEntity;
 
     @Test
-    void testFindAll() {
-        when(orderService.findAll()).thenReturn(List.of(orderEntity));
+    void testSave() {
+        when(orderService.save(any())).thenReturn(orderEntity);
     }
 
+    @Test
+    void testFindAll(){when(orderService.findAll()).thenReturn(List.of(orderEntity));
+
+    }
 }
+
